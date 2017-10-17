@@ -6,8 +6,8 @@ echo "Provisioning Start..."
 
 cd $HOME
 export DEBIAN_FRONTEND=noninteractive
-apt-get update
-apt-get install -y --no-install-recommends ansible git aptitude golang-go tzdata make
+sudo apt-get update
+sudo apt-get install -y --no-install-recommends ansible git aptitude golang-go tzdata make
 rm -rf isucon6-qualify
 git clone https://github.com/south37/isucon6-qualify.git
 sed -i -e 's:--disable-phar::' isucon6-qualify/provisioning/image/ansible/02_xbuild.yml
@@ -25,6 +25,6 @@ sed -i -e 's:--disable-phar::' isucon6-qualify/provisioning/image/ansible/02_xbu
   ./db_setup.sh
 )
 rm -rf isucon6-qualify
-usermod -G sudo -a -s /bin/bash isucon
+sudo usermod -G sudo -a -s /bin/bash isucon
 
 echo "Provisioning Successful for image"
