@@ -9,7 +9,7 @@ export DEBIAN_FRONTEND=noninteractive
 apt-get update
 apt-get install -y --no-install-recommends ansible git aptitude golang-go tzdata make
 rm -rf isucon6-qualify
-git clone https://github.com/isucon/isucon6-qualify.git
+git clone https://github.com/south37/isucon6-qualify.git
 sed -i -e 's:--disable-phar::' isucon6-qualify/provisioning/image/ansible/02_xbuild.yml
 (
   cd isucon6-qualify
